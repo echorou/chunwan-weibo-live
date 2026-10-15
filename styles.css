@@ -14,3 +14,5 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
 @media(min-width:761px) and (max-width:1040px){.global-search:focus-within~.topnav{visibility:hidden}}
 @media(min-width:761px) and (max-width:900px){.app-shell{max-width:660px;padding:0 10px}.main-area{display:block}.right-sidebar{display:none}.profile-buttons .more-button{display:flex}.profile-stats{font-size:12px;gap:13px}.profile-stats strong{font-size:14px}}
+.brand-logo{width:90px;height:30px;object-fit:contain;filter:none}.dark .brand-logo{background:#fff;border-radius:3px;padding:2px}
+@media(max-width:760px){.brand-logo{width:84px;height:28px}}
