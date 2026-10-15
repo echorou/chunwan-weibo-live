@@ -30,9 +30,9 @@
   const posts = [
     {
       id: 'chunxiaomie-2027', pinned: true, original: true, hot: true, type: 'photo', mascot: true,
-      time: '2027 原创概念 · 新朋友登场', likes: 2027, shares: 127, commentCount: 87,
+      time: '新朋友登场', likes: 2027, shares: 127, commentCount: 87,
       text: '#2027春晚原创吉祥物# #春小咩来报到# 叮咚！你的年味小伙伴「春小咩」来报到啦。\n成对卷云金角，奶白小羊身，头顶圆润卷毛，带着软乎乎的团圆心意。朱红金边短马甲上，一朵如意云纹送上吉庆祝愿。\n这份原创设计以历年春晚生肖形象的文化表达为灵感，创作属于春小咩自己的模样。愿新的一年，喜气洋洋，岁岁安康。',
-      images: [{ src: 'assets/mascot-2027-v3.png', alt: '春小咩，2027 丁未羊年原创概念吉祥物；奶白羊身，双卷云金角，头顶奶白卷毛，穿朱红金边如意纹短马甲，微笑挥手' }]
+      images: [{ src: 'assets/mascot-2027-v3.png', alt: '春小咩，2027 丁未羊年自主设计吉祥物；奶白羊身，双卷云金角，头顶奶白卷毛，穿朱红金边如意纹短马甲，微笑挥手' }]
     },
     {
       id: 'gala-opening', pinned: false, original: true, hot: true, type: 'photo',
@@ -144,7 +144,7 @@
       return `<button type="button" class="post-media video-cover" data-action="play-video" data-id="${post.id}" aria-label="打开${escapeHTML(post.videoTitle || '舞台回顾')}"><img src="${post.images[0].src}" alt="${escapeHTML(post.images[0].alt)}" loading="lazy"><span class="video-play">${icon('play')}</span><span class="video-caption">${escapeHTML(post.videoTitle || '舞台回顾')}<span>${escapeHTML(post.duration || '观看回顾')}</span></span></button>`;
     }
     if (post.mascot) {
-      return `<div class="post-media mascot-media"><button type="button" class="photo-button" data-action="show-photo" data-id="${post.id}" data-index="0" aria-label="查看原创吉祥物春小咩大图"><img src="${post.images[0].src}" width="1122" height="1402" alt="${escapeHTML(post.images[0].alt)}" loading="eager"><span class="mascot-caption"><strong>春小咩</strong><span>2027 丁未羊年<br>原创概念设计</span></span></button></div>`;
+      return `<div class="post-media mascot-media"><button type="button" class="photo-button" data-action="show-photo" data-id="${post.id}" data-index="0" aria-label="查看原创吉祥物春小咩大图"><img src="${post.images[0].src}" width="1122" height="1402" alt="${escapeHTML(post.images[0].alt)}" loading="eager"><span class="mascot-caption"><strong>春小咩</strong><span>2027 丁未羊年</span></span></button></div>`;
     }
     const isSingle = post.images.length === 1;
     return `<div class="${isSingle ? 'post-media' : 'photo-grid'}${post.images.length === 2 ? ' photo-grid-two' : ''}">${post.images.map((photo, index) => `<button type="button" class="photo-button" data-action="show-photo" data-id="${post.id}" data-index="${index}" aria-label="查看大图：${escapeHTML(photo.alt)}"><img src="${photo.src}" alt="${escapeHTML(photo.alt)}" loading="${post.pinned ? 'eager' : 'lazy'}">${!isSingle && index === post.images.length - 1 ? `<span class="media-count">${post.images.length} 张</span>` : ''}</button>`).join('')}</div>`;
@@ -155,7 +155,7 @@
       <section><h4>名字里的春天</h4><p>「春」是新岁与生长，「小」是亲近与陪伴，「咩」是小羊软乎乎的问候。合在一起，是一个把春天和祝福带到你身边的小伙伴。</p></section>
       <section><h4>一眼认出这只羊</h4><p>双角对称卷起，外翻的小耳朵、圆鼻与分瓣小蹄保留清楚的羊的特征。奶白色的身体采用柔和圆润的立体造型，卷毛适当简化，让缩小后的表情和轮廓也容易辨认。</p></section>
       <section><h4>把好彩头穿在身上</h4><p>羊角与卷云轮廓相融，以暖金表达吉祥；奶白卷毛层层相连，呼应团圆与温暖。朱红色短马甲收以金边，只留下一个清楚的如意云纹，承载如意安康的祝愿。奶白、朱红与暖金构成完整的三色搭配。这些寓意与组合是本次原创设定。</p></section>
-      <section><h4>从历年设计中寻找方法</h4><p>2015 年「阳阳」以小尾寒羊为原型，提醒我们先把生肖特征做清楚；2023 年「兔圆圆」将动物特征与传统美术结合；2024 年「龙辰辰」使用传统龙形与中国传统色；2025 年「巳升升」把如意等文化元素转化为造型语言；2026 年「骐骐、骥骥、驰驰、骋骋」从文物与真实马种汲取灵感。春小咩借鉴的是让生肖、文化与寓意相互支持的创作思路，角色的卷云金角、奶白卷毛与短马甲组合为独立创作。</p><p class="design-sources">设计参考：<a href="https://m.news.cntv.cn/2015/01/28/ARTI1422416678662896.shtml" target="_blank" rel="noopener noreferrer">2015 阳阳</a> · <a href="https://1118.cctv.com/2022/12/22/ARTIXupnKSon84vQWBZhCrGq221222.shtml" target="_blank" rel="noopener noreferrer">2023 兔圆圆</a> · <a href="https://www.cctv.com/2023/12/06/ARTI7h0A9Zl79WNwok9VLSnk231206.shtml" target="_blank" rel="noopener noreferrer">2024 龙辰辰</a> · <a href="https://yangbo.cctv.com/2024/12/03/ARTI5Ewm7EYxU8PvKVuM6ej1241203.shtml" target="_blank" rel="noopener noreferrer">2025 巳升升</a> · <a href="https://1118.cctv.com/2025/12/19/ARTILDHbtUE7XA7zrHseNLe7251219.shtml" target="_blank" rel="noopener noreferrer">2026 骐骐、骥骥、驰驰、骋骋</a>。以上链接为央视公开介绍，春小咩为 2027 羊年原创概念形象。</p></section>
+      <section><h4>从历年设计中寻找方法</h4><p>2015 年「阳阳」以小尾寒羊为原型，提醒我们先把生肖特征做清楚；2023 年「兔圆圆」将动物特征与传统美术结合；2024 年「龙辰辰」使用传统龙形与中国传统色；2025 年「巳升升」把如意等文化元素转化为造型语言；2026 年「骐骐、骥骥、驰驰、骋骋」从文物与真实马种汲取灵感。春小咩借鉴的是让生肖、文化与寓意相互支持的创作思路，角色的卷云金角、奶白卷毛与短马甲组合为独立创作。</p><p class="design-sources">设计参考：<a href="https://m.news.cntv.cn/2015/01/28/ARTI1422416678662896.shtml" target="_blank" rel="noopener noreferrer">2015 阳阳</a> · <a href="https://1118.cctv.com/2022/12/22/ARTIXupnKSon84vQWBZhCrGq221222.shtml" target="_blank" rel="noopener noreferrer">2023 兔圆圆</a> · <a href="https://www.cctv.com/2023/12/06/ARTI7h0A9Zl79WNwok9VLSnk231206.shtml" target="_blank" rel="noopener noreferrer">2024 龙辰辰</a> · <a href="https://yangbo.cctv.com/2024/12/03/ARTI5Ewm7EYxU8PvKVuM6ej1241203.shtml" target="_blank" rel="noopener noreferrer">2025 巳升升</a> · <a href="https://1118.cctv.com/2025/12/19/ARTILDHbtUE7XA7zrHseNLe7251219.shtml" target="_blank" rel="noopener noreferrer">2026 骐骐、骥骥、驰驰、骋骋</a>。以上链接为央视公开介绍，春小咩是独立设计的 2027 羊年形象。</p></section>
       <section><h4>性格故事</h4><p>爱笑、好奇、热心，喜欢一路挥着小蹄和大家打招呼。它把每一句祝福当成一朵暖云，收藏进自己的新年故事里；遇到久别归来的人，就笑眯眯地说：「咩一声，好事发生！」</p></section>
       <section><h4>小羊档案</h4><dl><div><dt>名字</dt><dd>春小咩</dd></div><div><dt>生肖</dt><dd>羊 · 2027 丁未羊年</dd></div><div><dt>形象记忆</dt><dd>双卷云金角 / 奶白卷毛 / 如意纹短马甲</dd></div><div><dt>代表色</dt><dd>奶白 / 朱红 / 暖金</dd></div><div><dt>拿手本领</dt><dd>收集祝福、发现年味</dd></div><div><dt>口头禅</dt><dd>「咩一声，好事发生！」</dd></div></dl></section>
       <section><h4>2027 的新年愿望</h4><p>愿你每一次出发都有勇气，每一次回家都有拥抱，每一个平凡日子都有小小欢喜。</p></section>
@@ -165,10 +165,10 @@
     const liked = state.liked.has(post.id);
     const saved = state.saved.has(post.id);
     return `<article class="post" id="post-${post.id}" data-post-id="${post.id}">
-      ${post.pinned ? '<div class="post-badge">置顶 <span>2027 原创吉祥物 · 春小咩</span></div>' : ''}
+      ${post.pinned ? '<div class="post-badge">置顶 <span>2027 羊年吉祥物 · 春小咩</span></div>' : ''}
       <div class="post-head">
         <div class="avatar-small"><img src="assets/avatar.jpg" alt="春晚头像"></div>
-        <div class="post-author"><strong>春晚 <span class="post-original">${post.mascot ? '原创概念' : '创作回顾'}</span></strong><span class="post-time">${publicationMarkup(post)}</span></div>
+        <div class="post-author"><strong>春晚${post.mascot ? '' : ' <span class="post-original">创作回顾</span>'}</strong><span class="post-time">${publicationMarkup(post)}</span></div>
         <button type="button" class="post-more${saved ? ' is-saved' : ''}" data-action="post-menu" data-id="${post.id}" aria-label="更多动态操作${saved ? '，已收藏' : ''}" aria-haspopup="dialog" title="更多操作">${icon('more')}</button>
       </div>
       <div class="post-copy">${copyMarkup(post.text)}</div>
@@ -295,7 +295,7 @@
     state.photo = { postId, index };
     const previousFocus = lastFocus;
     const wasOpen = $('#modal')?.open;
-    openModal(post.mascot ? '春小咩 · 原创概念形象' : `舞台相册 · ${index + 1} / ${post.images.length}`, `<img class="modal-media lightbox-image" src="${photo.src}" alt="${escapeHTML(photo.alt)}"><div class="lightbox-nav"><button type="button" data-action="previous-photo"${post.images.length === 1 ? ' disabled' : ''}>${icon('chevronLeft')}上一张</button><p>${escapeHTML(photo.alt)}</p><button type="button" data-action="next-photo"${post.images.length === 1 ? ' disabled' : ''}>下一张${icon('chevronRight')}</button></div><p class="modal-note">${post.mascot ? '2027 羊年春晚原创概念吉祥物 · 春小咩' : '2026 年春晚舞台配图，来源：央视网。'}</p>`);
+    openModal(post.mascot ? '春小咩 · 形象大图' : `舞台相册 · ${index + 1} / ${post.images.length}`, `<img class="modal-media lightbox-image" src="${photo.src}" alt="${escapeHTML(photo.alt)}"><div class="lightbox-nav"><button type="button" data-action="previous-photo"${post.images.length === 1 ? ' disabled' : ''}>${icon('chevronLeft')}上一张</button><p>${escapeHTML(photo.alt)}</p><button type="button" data-action="next-photo"${post.images.length === 1 ? ' disabled' : ''}>下一张${icon('chevronRight')}</button></div><p class="modal-note">${post.mascot ? '2027 羊年自主设计吉祥物 · 春小咩' : '2026 年春晚舞台配图，来源：央视网。'}</p>`);
     if (wasOpen) lastFocus = previousFocus;
   }
   function showVideo(postId) {
@@ -424,7 +424,7 @@
         break;
       case 'about':
         event.preventDefault();
-        openModal('关于这个页面', '<p class="modal-description">这是参考春晚微博公开主页布局制作的独立原创概念页面，展示原创 2027 丁未羊年吉祥物「春小咩」与春晚舞台回顾创作。</p><p>封面、头像与资料统计是参考账号公开页面的快照；本站的微博内容、互动计数与原创标记用于创作展示，没有接入微博实时接口。春小咩的双卷云金角、奶白卷毛与如意纹短马甲为本次原创设定，舞台配图来自央视网。</p><p>仅春小咩介绍文章标注北京时间 2026 年 10 月 15 日 20:05，其他动态不显示日期。关注、点赞、收藏、评论，以及夜间和大字模式偏好只保存在当前浏览器。</p><p><a href="https://weibo.com/u/3506728370" target="_blank" rel="noopener noreferrer">查看春晚微博参考主页 ↗</a></p>');
+        openModal('关于这个页面', '<p class="modal-description">这是参考春晚微博公开主页布局制作的独立创作展示页面，展示原创 2027 丁未羊年吉祥物「春小咩」与春晚舞台回顾创作。</p><p>封面、头像与资料统计是参考账号公开页面的快照；本站的微博内容与互动计数用于创作展示，没有接入微博实时接口。春小咩的双卷云金角、奶白卷毛与如意纹短马甲为本次原创设定，舞台配图来自央视网。</p><p>仅春小咩介绍文章标注北京时间 2026 年 10 月 15 日 20:05，其他动态不显示日期。关注、点赞、收藏、评论，以及夜间和大字模式偏好只保存在当前浏览器。</p><p><a href="https://weibo.com/u/3506728370" target="_blank" rel="noopener noreferrer">查看春晚微博参考主页 ↗</a></p>');
         break;
       case 'message':
         event.preventDefault();
