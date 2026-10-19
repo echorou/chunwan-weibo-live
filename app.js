@@ -3,7 +3,7 @@
 
   const STORAGE_KEY = 'chunwan-studio-demo-v1';
   const OFFICIAL_LIVE_URL = 'https://tv.cctv.com/live/cctv1/';
-  const FIRST_PUBLISHED_AT = '2026-10-14T23:05:00Z';
+  const FIRST_PUBLISHED_AT = '2026-10-19T11:05:00Z';
   const DISPLAY_TIME_ZONE = 'Asia/Shanghai';
   const publicationFormatter = new Intl.DateTimeFormat('zh-CN', {
     timeZone: DISPLAY_TIME_ZONE, year: 'numeric', month: '2-digit', day: '2-digit',
@@ -424,7 +424,7 @@
         break;
       case 'about':
         event.preventDefault();
-        openModal('关于这个页面', '<p class="modal-description">这是参考春晚微博公开主页布局制作的独立创作展示页面，展示原创 2027 丁未羊年吉祥物「春小咩」与春晚舞台回顾创作。</p><p>封面、头像与资料统计是参考账号公开页面的快照；本站的微博内容与互动计数用于创作展示，没有接入微博实时接口。春小咩的回纹金角、云朵羊毛、迎春花印记与国风披肩为本次原创设定，舞台配图来自央视网。</p><p>仅春小咩介绍文章标注北京时间 2026 年 10 月 15 日 07:05，其他动态不显示日期。关注、点赞、收藏、评论，以及夜间和大字模式偏好只保存在当前浏览器。</p><p><a href="https://weibo.com/u/3506728370" target="_blank" rel="noopener noreferrer">查看春晚微博参考主页 ↗</a></p>');
+        openModal('关于这个页面', '<p class="modal-description">这是参考春晚微博公开主页布局制作的独立创作展示页面，展示原创 2027 丁未羊年吉祥物「春小咩」与春晚舞台回顾创作。</p><p>封面、头像与资料统计是参考账号公开页面的快照；本站的微博内容与互动计数用于创作展示，没有接入微博实时接口。春小咩的回纹金角、云朵羊毛、迎春花印记与国风披肩为本次原创设定，舞台配图来自央视网。</p><p>仅春小咩介绍文章标注北京时间 2026 年 10 月 19 日 19:05，其他动态不显示日期。关注、点赞、收藏、评论，以及夜间和大字模式偏好只保存在当前浏览器。</p><p><a href="https://weibo.com/u/3506728370" target="_blank" rel="noopener noreferrer">查看春晚微博参考主页 ↗</a></p>');
         break;
       case 'message':
         event.preventDefault();
